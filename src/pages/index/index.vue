@@ -1,8 +1,15 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+	<view class="body">
+		<view class="card">
+			<view class="left">
+			   <view class="font-use">希图斯</view>
+			   <view class="icon"></view>
+			</view>
+			<view class="line"></view>
+			<view class="right">
+				<view class="font-day">白天</view>
+				<view class="time">{{min}} 分 {{sec}} 秒</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -11,39 +18,90 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello111',
+				min:3,
+				sec:15
 			}
 		},
 		onLoad() {
 
 		},
-		methods: {
+		methods:{
 
 		}
 	}
 </script>
 
 <style>
-	.content {
+	.line{
+		width: 4rpx;
+		height: 240rpx;
+		background-color: 	#778899;
+	}
+	.icon{
+		width: 150rpx;
+		height: 150rpx; 
+		margin-top: 20rpx ;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+		border-radius: 30rpx;
+	}
+	.body{
+		width: 750rpx;
+		height: 100vh;
 		display: flex;
-		flex-direction: column;
+		justify-content: center;
+		position: relative;
+	}
+	.card{
+		margin-top: 20rpx;
+		width: 730rpx;
+		height: 330rpx;
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		justify-content: center;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
+	.left{
+		width: 370rpx;
+		height: 320rpx;
+	   
+	    display: flex;
+	    justify-content: center; 
+	  flex-wrap: wrap;
 	}
-
-	.text-area {
+	.right{
+		width: 370rpx;
+		height: 320rpx;
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.font-use{
+		margin-top: 30rpx;
+		text-align: center;
+		 font-size: 60rpx;
+        font-family: PingFangSC-Regular, PingFang SC;
+		width:370rpx;
+		height:80rpx;
+		
+		
+	}
+	.font-day{
+		width: 300rpx;
+		height: 60rpx;
+		
+		  font-family: PingFangSC-Regular, PingFang SC;
+		   font-size: 60rpx;
+		   text-align: center;
+		   margin-top: 50rpx;
+	}
+	.time{
+		width: 300rpx;
+		height: 60rpx;
+		text-align: center;
+		
+		margin-top: 10rpx;
+		font-size: 50rpx;
 	}
 </style>
